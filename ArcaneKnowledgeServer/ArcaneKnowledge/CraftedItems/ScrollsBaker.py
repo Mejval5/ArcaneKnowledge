@@ -3,14 +3,6 @@
 import csv
 import os
 
-# read csv file
-def read_csv(file_name):
-    with open(file_name, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',')
-        for row in reader:
-            yield row
-
-
 file_name = 'scrolls.csv'
 
 # read file into a list of dict

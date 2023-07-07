@@ -3,14 +3,6 @@
 import csv
 import os
 
-# read csv file
-def read_csv(file_name):
-    with open(file_name, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',')
-        for row in reader:
-            yield row
-
-
 file_name = 'recipes.csv'
 
 # read file into a list of dict
@@ -78,8 +70,6 @@ namespace Eco.Mods.TechTree
     class_name = """
     public class {0} : RecipeFamily
     {{""".format(class_type)
-
-# add variable in: Time	Labor	Xp	Life	Food	Metal	Fire	Earth	Nature	Research
 
     setttings = """
         // Settings:                                     Ratio, Xp, Time, Labor
