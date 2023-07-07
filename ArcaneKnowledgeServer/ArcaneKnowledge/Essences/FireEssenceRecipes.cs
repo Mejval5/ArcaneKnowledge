@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class BurnableFuelSacrificeForEssenceRecipe : RecipeFamily
     {
         // Properties
-        private static float Ratio => 0.2f;
+        private static float Ratio => 0.02f;
         private static float ExperienceForCrafting => 1f;
         private static float Time => 0.25f;
         private static float BaseLabor => 50f;

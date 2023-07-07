@@ -832,7 +832,7 @@ namespace Eco.Mods.TechTree
     public class WoodBoardSacrificeForEssenceRecipe : RecipeFamily
     {
         // Properties
-        private static float Ratio => 0.25f;
+        private static float Ratio => 0.5f;
         private static float ExperienceForCrafting => 1f;
         private static float Time => 0.25f;
         private static float BaseLabor => 50f;
@@ -910,7 +910,7 @@ namespace Eco.Mods.TechTree
     public class SpoiledFoodSacrificeForEssenceRecipe : RecipeFamily
     {
         // Properties
-        private static float Ratio => 0.25f;
+        private static float Ratio => 0.01f;
         private static float ExperienceForCrafting => 1f;
         private static float Time => 0.25f;
         private static float BaseLabor => 50f;

@@ -85,6 +85,7 @@ namespace Eco.Mods.TechTree
     [Eco.Gameplay.Items.MaxStackSize(500)]
     [Eco.Gameplay.Items.Weight(10)]
     [Tag("Essence", 1)]
+    [Tag("Currency", 1)]
     public abstract class EssenceItem : Item
     {
         public override LocString DisplayDescription => Localizer.DoStr("An Arcane Essence used for crafting.");

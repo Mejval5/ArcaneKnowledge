@@ -117,6 +117,84 @@ namespace Eco.Mods.TechTree
         
         #endregion
     }
+    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 4)]
+    public class AdvancedResearchSacrificeForEssenceRecipe : RecipeFamily
+    {
+        // Properties
+        private static float Ratio => 10f;
+        private static float ExperienceForCrafting => 1f;
+        private static float Time => 0.25f;
+        private static float BaseLabor => 50f;
+        
+        // Input
+        private IngredientElement Ingredient => new IngredientElement(
+            "Advanced Research", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+        );
+
+        private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
+
+        // Output
+        private CraftingElement CraftingOutput => new CraftingElement<ResearchEssenceItem>(OutputAmount);
+
+        public AdvancedResearchSacrificeForEssenceRecipe()
+        {
+            InitializeRecipe();
+        }
+
+        #region boilerplate
+        
+        // Properties
+        protected float SourceAmount
+        {
+            get
+            {
+                if (Ratio < 1f)
+                {
+                    return 1f / Ratio * 2f;
+                }
+
+                return 2f;
+            }
+        }
+        
+        protected float OutputAmount
+        {
+            get
+            {
+                if (Ratio > 1f)
+                {
+                    return Ratio;
+                }
+
+                return 1f;
+            }
+        }
+        
+        private string RecipeNameNoSpace => GetType().Name.Replace("ForEssenceRecipe", "");
+        private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
+        
+        public void InitializeRecipe()
+        {
+            this.Recipes = new List<Recipe>()
+            {
+                new Recipe($"{RecipeNameNoSpace.Replace(" ", "")}", Localizer.DoStr(BaseRecipeName), new IngredientElement[]
+                {
+                    Ingredient
+                }, new[]
+                {
+                    CraftingOutput
+                })
+            };
+
+            this.ExperienceOnCraft = ExperienceForCrafting;
+            this.LaborInCalories = RecipeFamily.CreateLaborInCaloriesValue(BaseLabor, typeof (ArcaneKnowledgeSkill));
+            this.CraftMinutes = RecipeFamily.CreateCraftTimeValue(GetType(), Time, typeof (ArcaneKnowledgeSkill), typeof (ArcaneKnowledgeFocusedSpeedTalent), typeof (ArcaneKnowledgeParallelSpeedTalent));
+            this.Initialize(Localizer.DoStr(BaseRecipeName), GetType());
+            CraftingComponent.AddRecipe(typeof (ArcaneKnowledgeCircleObject), this);
+        }
+        
+        #endregion
+    }
     
     [RequiresSkill(typeof(ArcaneKnowledgeSkill), 3)]
     public class BasicResearchSacrificeForEssenceRecipe : RecipeFamily

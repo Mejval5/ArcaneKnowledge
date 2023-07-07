@@ -9,10 +9,10 @@ using Eco.Shared.Serialization;
 namespace Eco.Mods.TechTree
 {
     [Serialized]
-    [RequiresSkill(typeof (EngineerSkill), 0)]
+    [RequiresSkill(typeof (SurvivalistSkill), 0)]
     [Eco.Gameplay.Items.Tier(2f, true)]
     [LocDisplayName("Arcane Knowledge")]
-    [Ecopedia("Professions", "Arcana", true, true, null)]
+    [Ecopedia("Professions", "Survivalist", true, true, null)]
     [Tag("Specialty", 1)]
     [Tag("Teachable", 1)]
     public class ArcaneKnowledgeSkill : Skill
