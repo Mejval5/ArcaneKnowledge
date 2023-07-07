@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class CompositeLumberSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 8f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 8f, 3.6f, 1.6f, 340f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "CompositeLumber", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

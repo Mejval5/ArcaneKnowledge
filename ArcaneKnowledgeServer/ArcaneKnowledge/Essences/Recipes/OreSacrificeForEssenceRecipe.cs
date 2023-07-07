@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class OreSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 0.75f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 0.75f, 1.2f, 0.3f, 60f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "Ore", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

@@ -86,7 +86,7 @@ namespace Eco.Mods.TechTree
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            {0}, SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );""".format(input_type)
     
     table = """

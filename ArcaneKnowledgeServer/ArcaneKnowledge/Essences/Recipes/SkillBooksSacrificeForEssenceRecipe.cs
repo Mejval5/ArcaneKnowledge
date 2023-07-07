@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class SkillBooksSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 1f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 1f, 1.5f, 0.4f, 70f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "Skill Books", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

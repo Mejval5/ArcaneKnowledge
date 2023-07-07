@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class ModernResearchSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 45f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 45f, 6.4f, 6.3f, 2360f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "Modern Research", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

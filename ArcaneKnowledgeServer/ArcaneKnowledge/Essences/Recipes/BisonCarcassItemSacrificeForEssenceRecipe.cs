@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class BisonCarcassItemSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 5f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 5f, 2.8f, 0.7f, 150f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            typeof(BisonCarcassItem), SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

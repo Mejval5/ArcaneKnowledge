@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class FriedVegetableSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 0.25f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 0.25f, 0.8f, 0.3f, 60f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "FriedVegetable", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

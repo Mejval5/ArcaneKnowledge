@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class SpoiledFoodItemSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 0.01f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 0.01f, 0.1f, 0.2f, 50f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            typeof(SpoiledFoodItem), SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table

@@ -43,11 +43,11 @@ namespace Eco.Mods.TechTree
     public class BasicUpgradeSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 15f, 1f, 0.25f, 50f };
+        private static float[] Settings => new float[] { 15f, 4.1f, 1.3f, 380f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "BasicUpgrade", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table
