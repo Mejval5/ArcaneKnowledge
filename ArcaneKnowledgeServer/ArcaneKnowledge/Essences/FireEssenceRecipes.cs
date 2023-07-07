@@ -50,13 +50,13 @@ namespace Eco.Mods.TechTree
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            TagName, SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
 
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FireEssenceItem>(OutputAmount);
 
         public BurnableFuelSacrificeForEssenceRecipe()
         {
@@ -135,7 +135,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FireEssenceItem>(OutputAmount);
 
         public CoalSacrificeForEssenceRecipe()
         {

@@ -56,7 +56,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public BakedFoodSacrificeForEssenceRecipe()
         {
@@ -135,7 +135,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public BreadSacrificeForEssenceRecipe()
         {
@@ -214,7 +214,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public CampfireSaladSacrificeForEssenceRecipe()
         {
@@ -293,7 +293,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public CharredFruitSacrificeForEssenceRecipe()
         {
@@ -356,7 +356,7 @@ namespace Eco.Mods.TechTree
     }
     
     [RequiresSkill(typeof(ArcaneKnowledgeSkill), 1)]
-    public class CharredGreenFillerSacrificeForEssenceRecipe : RecipeFamily
+    public class CharredGreenSacrificeForEssenceRecipe : RecipeFamily
     {
         // Properties
         private static float Ratio => 0.1f;
@@ -372,9 +372,9 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
-        public CharredGreenFillerSacrificeForEssenceRecipe()
+        public CharredGreenSacrificeForEssenceRecipe()
         {
             InitializeRecipe();
         }
@@ -451,7 +451,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public CharredVegetableSacrificeForEssenceRecipe()
         {
@@ -530,7 +530,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public CropSacrificeForEssenceRecipe()
         {
@@ -609,7 +609,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public FatSacrificeForEssenceRecipe()
         {
@@ -688,7 +688,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public FriedVegetableSacrificeForEssenceRecipe()
         {
@@ -767,7 +767,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public FruitSacrificeForEssenceRecipe()
         {
@@ -845,7 +845,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public FungusSacrificeForEssenceRecipe()
         {
@@ -923,7 +923,7 @@ namespace Eco.Mods.TechTree
         private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<NatureEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
         public HarvestableSacrificeForEssenceRecipe()
         {
