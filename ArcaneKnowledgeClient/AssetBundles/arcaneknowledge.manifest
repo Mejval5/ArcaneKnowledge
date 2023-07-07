@@ -1,0 +1,115 @@
+ManifestFileVersion: 0
+CRC: 166691645
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8763826e06e63251ee1ec65c9bfc0846
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 4d64f548222ba8eb5006a046809e16c4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6ce3cf79c2a8f3e4a862ca5955bba5f9, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2736eee4c5f28934c94000bf73bb1719, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: b5ef5fa54cb167144b0c14545efe42ff, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 22281bf2bb54279449ac8e3fbf199314, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 128
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Eco.Client
+  ClassName: ChangedStateEvent
+- AssemblyName: Eco.Client
+  ClassName: SetStateEvent
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FaceInfo_Legacy
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.FontAssetCreationSettings
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.KerningTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_Character
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontFeatureTable
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_FontWeightPair
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphPairAdjustmentRecord
+- AssemblyName: Unity.TextMeshPro
+  ClassName: TMPro.TMP_GlyphValueRecord
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.ArgumentCache
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentListenerMode
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.FaceInfo
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.Glyph
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphMetrics
+- AssemblyName: UnityEngine.TextCoreFontEngineModule
+  ClassName: UnityEngine.TextCore.GlyphRect
+Assets:
+- Assets/PolygonDungeon/Textures/Emmisive/Emmisive_01.png
+- Assets/PolygonDungeon/Models/SM_Env_Tiles_Pentagram_01.fbx
+- Assets/PolygonDungeon/Materials/Dungeon_Material_01.mat
+- Assets/PolygonDungeon/Textures/Misc/Dungeons_Crystal_Metallic.tif
+- Assets/PolygonDungeon/Materials/Dungeon_Material_03.mat
+- Assets/PolygonDungeon/Materials/Dungeon_Material_02.mat
+- Assets/EcoModKit/Shaders/CurvedStandardFade.shader
+- Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+- Assets/ArcaneKnowledge/debug.png
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
+- Assets/PolygonDungeon/Models/CollisionConvex/SM_Env_Tiles_Pentagram_01_Convex 1.asset
+- Assets/PolygonDungeon/Textures/Emmisive/Emmisive_03.png
+- Assets/PolygonDungeon/Textures/Dungeons_Texture_01.png
+- Assets/ArcaneKnowledge/ArcaneLivingCircleObject.prefab
+- Assets/ArcaneKnowledge/ArcaneMaterialCircleObject.prefab
+- Assets/PolygonDungeon/Textures/Emmisive/Emmisive_02.png
+- Assets/ArcaneKnowledge/ArcaneKnowledgeCircleObject.prefab
+- Assets/PolygonDungeon/Textures/Dungeons_Texture_02.png
+- Assets/ArcaneKnowledge/Particles.mat
+- Assets/EcoModKit/Shaders/CurvedParticleStandardSurface.shader
+- Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+- Assets/PolygonDungeon/Textures/Dungeons_Texture_03.png
+- Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+Dependencies: []
