@@ -81,7 +81,7 @@ namespace Eco.Mods.TechTree
 
     setttings = """
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] {{ {0}, {1}, {2}, {3}, {4}, {5}, {6}, {7}, {8}, {9} }};""".format(row["Time"], row["Labor"], row["Xp"], row["Life"], row["Food"], row["Metal"], row["Fire"], row["Earth"], row["Nature"], row["Research"])
+        private static float[] Settings => new float[] {{ {0}f, {1}f, {2}f, {3}f, {4}f, {5}f, {6}f, {7}f, {8}f, {9}f }};""".format(row["Time"], row["Labor"], row["Xp"], row["Life"], row["Food"], row["Metal"], row["Fire"], row["Earth"], row["Nature"], row["Research"])
 
     output = """
         private CraftingElement CraftingOutput => new CraftingElement<{0}>(1);""".format(row["Name"])

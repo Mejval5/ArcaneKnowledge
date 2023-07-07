@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
@@ -36,103 +36,22 @@ using static Eco.Gameplay.Housing.PropertyValues.HomeFurnishingValue;
 using Eco.Core.Controller;
 using Eco.Gameplay.Systems.NewTooltip;
 using System.Linq;
-
+    
 namespace Eco.Mods.TechTree
 {
-    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 1)]
-    public class BurnableFuelSacrificeForEssenceRecipe : RecipeFamily
+    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 3)]
+    public class CoalSacrificeForEssenceRecipe : RecipeFamily
     {
-        // Properties
-        private static float Ratio => 0.02f;
-        private static float ExperienceForCrafting => 1f;
-        private static float Time => 0.25f;
-        private static float BaseLabor => 50f;
+        // Settings:                                     Ratio, Xp, Time, Labor
+        private static float[] Settings => new float[] { 0.2f, 1f, 0.25f, 50f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
             "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
-
-        private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
-
-        // Output
-        private CraftingElement CraftingOutput => new CraftingElement<FireEssenceItem>(OutputAmount);
-
-        public BurnableFuelSacrificeForEssenceRecipe()
-        {
-            InitializeRecipe();
-        }
-
-        #region boilerplate
         
-        // Properties
-        protected float SourceAmount
-        {
-            get
-            {
-                if (Ratio < 1f)
-                {
-                    return 1f / Ratio * 2f;
-                }
-
-                return 2f;
-            }
-        }
-        
-        protected float OutputAmount
-        {
-            get
-            {
-                if (Ratio > 1f)
-                {
-                    return Ratio;
-                }
-
-                return 1f;
-            }
-        }
-        
-        private string RecipeNameNoSpace => GetType().Name.Replace("ForEssenceRecipe", "");
-        private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
-        
-        public void InitializeRecipe()
-        {
-            this.Recipes = new List<Recipe>()
-            {
-                new Recipe($"{RecipeNameNoSpace.Replace(" ", "")}", Localizer.DoStr(BaseRecipeName), new IngredientElement[]
-                {
-                    Ingredient
-                }, new[]
-                {
-                    CraftingOutput
-                })
-            };
-
-            this.ExperienceOnCraft = ExperienceForCrafting;
-            this.LaborInCalories = RecipeFamily.CreateLaborInCaloriesValue(BaseLabor, typeof (ArcaneKnowledgeSkill));
-            this.CraftMinutes = RecipeFamily.CreateCraftTimeValue(GetType(), Time, typeof (ArcaneKnowledgeSkill), typeof (ArcaneKnowledgeFocusedSpeedTalent), typeof (ArcaneKnowledgeParallelSpeedTalent));
-            this.Initialize(Localizer.DoStr(BaseRecipeName), GetType());
-            CraftingComponent.AddRecipe(typeof (ArcaneMaterialCircleObject), this);
-        }
-        
-        #endregion
-    }
-    
-    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 3)]
-    public class CoalSacrificeForEssenceRecipe : RecipeFamily
-    {
-        // Properties
-        private static float Ratio => 0.8f;
-        private static float ExperienceForCrafting => 1f;
-        private static float Time => 0.25f;
-        private static float BaseLabor => 50f;
-        
-        // Input
-        private IngredientElement Ingredient => new IngredientElement(
-            TagName, SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
-        );
-
-        private string TagName => RecipeNameNoSpace.Replace("Sacrifice", "");
+        // Table
+        private Type TableType => typeof(ArcaneMaterialCircleObject);
 
         // Output
         private CraftingElement CraftingOutput => new CraftingElement<FireEssenceItem>(OutputAmount);
@@ -143,6 +62,12 @@ namespace Eco.Mods.TechTree
         }
 
         #region boilerplate
+
+        // Properties
+        private static float Ratio => Settings[0];
+        private static float ExperienceForCrafting => Settings[1];
+        private static float Time => Settings[2];
+        private static float BaseLabor => Settings[3];
         
         // Properties
         protected float SourceAmount
@@ -191,7 +116,7 @@ namespace Eco.Mods.TechTree
             this.LaborInCalories = RecipeFamily.CreateLaborInCaloriesValue(BaseLabor, typeof (ArcaneKnowledgeSkill));
             this.CraftMinutes = RecipeFamily.CreateCraftTimeValue(GetType(), Time, typeof (ArcaneKnowledgeSkill), typeof (ArcaneKnowledgeFocusedSpeedTalent), typeof (ArcaneKnowledgeParallelSpeedTalent));
             this.Initialize(Localizer.DoStr(BaseRecipeName), GetType());
-            CraftingComponent.AddRecipe(typeof (ArcaneMaterialCircleObject), this);
+            CraftingComponent.AddRecipe(TableType, this);
         }
         
         #endregion

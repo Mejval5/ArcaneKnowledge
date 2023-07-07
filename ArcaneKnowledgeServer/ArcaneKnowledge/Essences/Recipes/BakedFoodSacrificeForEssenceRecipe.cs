@@ -1,34 +1,4 @@
-# read csv file to get the data
-
-import csv
-import os
-
-# read csv file
-def read_csv(file_name):
-    with open(file_name, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=',')
-        for row in reader:
-            yield row
-
-
-file_name = 'recipes.csv'
-
-# read file into a list of dict
-# each dict has first row as key for each column
-def read_csv_to_dict(file_name):
-    with open(file_name, newline='') as csvfile:
-        reader = csv.DictReader(csvfile, delimiter=',')
-        for row in reader:
-            yield row
-
-# print value in each row with the key "Level"
-data = read_csv_to_dict(file_name)
-
-for row in data:
-
-    class_type = "{0}SacrificeForEssenceRecipe".format(row["Name"].replace(" ", ""))
-
-    header = """using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text.RegularExpressions;
@@ -65,58 +35,31 @@ using Eco.Gameplay.Housing.PropertyValues;
 using static Eco.Gameplay.Housing.PropertyValues.HomeFurnishingValue;
 using Eco.Core.Controller;
 using Eco.Gameplay.Systems.NewTooltip;
-using System.Linq;"""
-
-    open_namespace = """
+using System.Linq;
     
 namespace Eco.Mods.TechTree
-{"""
-
-    attribute = """
-    [RequiresSkill(typeof(ArcaneKnowledgeSkill), {0})]""".format(row["Level"])
-    
-    class_name = """
-    public class {0} : RecipeFamily
-    {{""".format(class_type)
-
-# add variable in: Time	Labor	Xp	Life	Food	Metal	Fire	Earth	Nature	Research
-
-    setttings = """
+{
+    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 3)]
+    public class BakedFoodSacrificeForEssenceRecipe : RecipeFamily
+    {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] {{ {0}f, {1}f, {2}f, {3}f }};""".format(row["Ratio"], row["Xp"], row["Time"], row["Labor"])
-
-    if row["Type"] == "Tag":
-        input_type = '"{0}"'.format(row["Name"])
-    elif row["Type"] == "Type":
-        input_type = 'typeof({0})'.format(row["Name"])
-    else:
-        raise Exception("Type not supported")
-
-    input = """
+        private static float[] Settings => new float[] { 1f, 1f, 0.25f, 50f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
             "Burnable Fuel", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
-        );""".format(input_type)
-    
-    table = """
+        );
         
         // Table
-        private Type TableType => typeof({0});""".format(row["Table"])
-
-    output = """
+        private Type TableType => typeof(ArcaneLivingCircleObject);
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<{0}>(OutputAmount);""".format(row["EssenceType"])
-    
-    constructor = """
+        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
 
-        public {0}()
-        {{
+        public BakedFoodSacrificeForEssenceRecipe()
+        {
             InitializeRecipe();
-        }}""".format(class_type)
-    
-    boilerplate = """
+        }
 
         #region boilerplate
 
@@ -176,26 +119,6 @@ namespace Eco.Mods.TechTree
             CraftingComponent.AddRecipe(TableType, this);
         }
         
-        #endregion"""
-    
-    ending = """
+        #endregion
     }
-}"""
-
-    # now write each row into a separate file
-    file_name = class_type + ".cs"
-    file_path = os.path.join(os.getcwd(), "Recipes", file_name)
-    with open(file_path, "w") as f:
-        f.write(header)
-        f.write(open_namespace)
-        f.write(attribute)
-        f.write(class_name)
-        f.write(setttings)
-        f.write(input)
-        f.write(table)
-        f.write(output)
-        f.write(constructor)
-        f.write(boilerplate)
-        f.write(ending)
-        f.close()
-
+}
