@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class ButcherySkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 5, 115, 5, 25, 0, 0, 5, 0, 0, 10 };
+        private static float[] Settings => new float[] { 5f, 115f, 5f, 25f, 0f, 0f, 5f, 0f, 0f, 10f };
         private CraftingElement CraftingOutput => new CraftingElement<ButcherySkillScroll>(1);
 
         public ButcherySkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()

@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class OilDrillingSkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 40, 34000, 265, 360, 445, 2275, 390, 395, 885, 260 };
+        private static float[] Settings => new float[] { 40f, 34000f, 265f, 360f, 445f, 2275f, 390f, 395f, 885f, 260f };
         private CraftingElement CraftingOutput => new CraftingElement<OilDrillingSkillScroll>(1);
 
         public OilDrillingSkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()

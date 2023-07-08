@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class ClothesSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 4f, 2.4f, 0.4f, 100f };
+        private static float[] Settings => new float[] { 4f, 2.4f, 1.8f, 100f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(

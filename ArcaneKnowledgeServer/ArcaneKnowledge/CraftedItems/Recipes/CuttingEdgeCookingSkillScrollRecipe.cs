@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class CuttingEdgeCookingSkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 60, 44000, 315, 760, 1135, 1290, 410, 415, 560, 140 };
+        private static float[] Settings => new float[] { 60f, 44000f, 315f, 760f, 1135f, 1290f, 410f, 415f, 560f, 140f };
         private CraftingElement CraftingOutput => new CraftingElement<CuttingEdgeCookingSkillScroll>(1);
 
         public CuttingEdgeCookingSkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()

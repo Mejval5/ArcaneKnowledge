@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class HarvestableSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 0.1f, 0.4f, 0.2f, 60f };
+        private static float[] Settings => new float[] { 0.1f, 0.4f, 0.8f, 60f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(

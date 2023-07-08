@@ -81,7 +81,7 @@ namespace Eco.Mods.TechTree
     }
 
     [Serialized]
-    [Ecopedia("Arcane Knowledge", "Essences", createAsSubPage: true)]
+    [Ecopedia("Items", "Essences", createAsSubPage: true)]
     [Eco.Gameplay.Items.MaxStackSize(500)]
     [Eco.Gameplay.Items.Weight(10)]
     [Tag("Essence", 1)]

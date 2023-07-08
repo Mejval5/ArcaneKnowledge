@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class AdvancedSmeltingSkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 40, 5000, 105, 55, 45, 1125, 120, 60, 30, 75 };
+        private static float[] Settings => new float[] { 40f, 5000f, 105f, 55f, 45f, 1125f, 120f, 60f, 30f, 75f };
         private CraftingElement CraftingOutput => new CraftingElement<AdvancedSmeltingSkillScroll>(1);
 
         public AdvancedSmeltingSkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()

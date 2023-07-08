@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class TailoringSkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 5, 250, 15, 30, 50, 115, 10, 30, 25, 25 };
+        private static float[] Settings => new float[] { 5f, 250f, 15f, 30f, 50f, 115f, 10f, 30f, 25f, 25f };
         private CraftingElement CraftingOutput => new CraftingElement<TailoringSkillScroll>(1);
 
         public TailoringSkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()

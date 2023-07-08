@@ -39,24 +39,24 @@ using System.Linq;
     
 namespace Eco.Mods.TechTree
 {
-    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 3)]
-    public class BakedFoodSacrificeForEssenceRecipe : RecipeFamily
+    [RequiresSkill(typeof(ArcaneKnowledgeSkill), 1)]
+    public class NaturalFiber2SacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 1f, 1.5f, 1.8f, 70f };
+        private static float[] Settings => new float[] { 0.02f, 0.1f, 0.8f, 60f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(
-            "BakedFood", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
+            "NaturalFiber", SourceAmount, typeof(ArcaneKnowledgeSkill), typeof(ArcaneKnowledgeLavishReqTalent)
         );
         
         // Table
-        private Type TableType => typeof(ArcaneLivingCircleObject);
+        private Type TableType => typeof(ArcaneMaterialCircleObject);
 
         // Output
-        private CraftingElement CraftingOutput => new CraftingElement<FoodEssenceItem>(OutputAmount);
+        private CraftingElement CraftingOutput => new CraftingElement<FireEssenceItem>(OutputAmount);
 
-        public BakedFoodSacrificeForEssenceRecipe()
+        public NaturalFiber2SacrificeForEssenceRecipe()
         {
             InitializeRecipe();
         }

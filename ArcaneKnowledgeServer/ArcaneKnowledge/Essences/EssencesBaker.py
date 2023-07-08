@@ -2,6 +2,7 @@
 
 import csv
 import os
+import re
 
 file_name = 'recipes.csv'
 
@@ -81,6 +82,8 @@ namespace Eco.Mods.TechTree
         input_type = 'typeof({0})'.format(row["Name"])
     else:
         raise Exception("Type not supported")
+    
+    input_type = re.sub(r'\d+', '', input_type)
 
     input = """
         

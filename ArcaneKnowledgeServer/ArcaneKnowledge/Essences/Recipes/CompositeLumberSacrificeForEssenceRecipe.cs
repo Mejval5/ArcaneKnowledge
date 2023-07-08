@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class CompositeLumberSacrificeForEssenceRecipe : RecipeFamily
     {
         // Settings:                                     Ratio, Xp, Time, Labor
-        private static float[] Settings => new float[] { 8f, 3.6f, 1.6f, 340f };
+        private static float[] Settings => new float[] { 8f, 3.6f, 5.8f, 340f };
         
         // Input
         private IngredientElement Ingredient => new IngredientElement(

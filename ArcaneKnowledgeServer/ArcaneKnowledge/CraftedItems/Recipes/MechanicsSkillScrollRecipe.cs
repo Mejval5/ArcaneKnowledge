@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class MechanicsSkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 20, 4000, 85, 160, 155, 790, 115, 150, 555, 90 };
+        private static float[] Settings => new float[] { 20f, 4000f, 85f, 160f, 155f, 790f, 115f, 150f, 555f, 90f };
         private CraftingElement CraftingOutput => new CraftingElement<MechanicsSkillScroll>(1);
 
         public MechanicsSkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()

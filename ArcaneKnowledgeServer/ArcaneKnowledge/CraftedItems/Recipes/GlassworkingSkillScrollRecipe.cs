@@ -43,7 +43,7 @@ namespace Eco.Mods.TechTree
     public class GlassworkingSkillScrollRecipe : RecipeFamily
     {
         // Settings: Time,Labor,XP,Life,Food,Metal,Fire,Earth,Nature,Research
-        private static float[] Settings => new float[] { 20, 2500, 50, 55, 45, 225, 20, 170, 235, 55 };
+        private static float[] Settings => new float[] { 20f, 2500f, 50f, 55f, 45f, 225f, 20f, 170f, 235f, 55f };
         private CraftingElement CraftingOutput => new CraftingElement<GlassworkingSkillScroll>(1);
 
         public GlassworkingSkillScrollRecipe()
@@ -74,7 +74,7 @@ namespace Eco.Mods.TechTree
             return validIngredients.ToArray();
         }
         
-        private string RecipeNameNoSpace => "Conjure" + GetType().Name.Replace("Recipe", "");
+        private string RecipeNameNoSpace => GetType().Name.Replace("Recipe", "") + "Conjuration";
         private string BaseRecipeName => string.Concat(RecipeNameNoSpace.Select(x => Char.IsUpper(x) ? " " + x : x.ToString())).TrimStart(' ');
         
         public void InitializeRecipe()
