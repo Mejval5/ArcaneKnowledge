@@ -6124,7 +6124,7 @@ GameObject:
   - component: {fileID: 1575963878}
   - component: {fileID: 1575963879}
   m_Layer: 0
-  m_Name: ArcaneKnowledgeLavishResourcesTalent
+  m_Name: ArcaneKnowledgeLavishWorkspaceTalentGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
