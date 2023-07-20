@@ -55,6 +55,8 @@ namespace Eco.Mods.TechTree
 
         protected override void Initialize()
         {
+            TagManager.GetOrMake("Essence").IconName = "Essence";
+            
             GetComponent<MinimapComponent>().SetCategory(Localizer.DoStr("Crafting"));
         }
         

@@ -40,43 +40,43 @@ namespace Eco.Mods.TechTree
 {
     [Serialized]
     [LocDisplayName("Research Essence")]
-    public partial class ResearchEssenceItem : EssenceItem
+    public partial class ResearchEssenceItem : BaseEssenceItem
     {
     }
     
     [Serialized]
     [LocDisplayName("Life Essence")]
-    public partial class LifeEssenceItem : EssenceItem
+    public partial class LifeEssenceItem : BaseEssenceItem
     {
     }
     
     [Serialized]
     [LocDisplayName("Earth Essence")]
-    public partial class EarthEssenceItem : EssenceItem
+    public partial class EarthEssenceItem : BaseEssenceItem
     {
     }
     
     [Serialized]
     [LocDisplayName("Food Essence")]
-    public partial class FoodEssenceItem : EssenceItem
+    public partial class FoodEssenceItem : BaseEssenceItem
     {
     }
     
     [Serialized]
     [LocDisplayName("Fire Essence")]
-    public partial class FireEssenceItem : EssenceItem
+    public partial class FireEssenceItem : BaseEssenceItem
     {
     }
     
     [Serialized]
     [LocDisplayName("Nature Essence")]
-    public partial class NatureEssenceItem : EssenceItem
+    public partial class NatureEssenceItem : BaseEssenceItem
     {
     }
     
     [Serialized]
     [LocDisplayName("Metal Essence")]
-    public partial class MetalEssenceItem : EssenceItem
+    public partial class MetalEssenceItem : BaseEssenceItem
     {
     }
 
@@ -84,9 +84,21 @@ namespace Eco.Mods.TechTree
     [Ecopedia("Items", "Essences", createAsSubPage: true)]
     [Eco.Gameplay.Items.MaxStackSize(500)]
     [Eco.Gameplay.Items.Weight(10)]
-    [Tag("Essence", 1)]
     [Tag("Currency", 1)]
-    public abstract class EssenceItem : Item
+    [Tag("Essence", 1)]
+    public abstract class BaseEssenceItem : Item
+    {
+        public override LocString DisplayDescription => Localizer.DoStr("An Arcane Essence used for crafting.");
+    }
+
+    [Serialized]
+    [Eco.Gameplay.Items.MaxStackSize(500)]
+    [Eco.Gameplay.Items.Weight(10)]
+    [LocDisplayName("Essence")]
+    [Tag("Currency", 1)]
+    [Tag("Essence", 1)]
+    [Category("Hidden")]
+    public partial class EssenceItem : Item
     {
         public override LocString DisplayDescription => Localizer.DoStr("An Arcane Essence used for crafting.");
     }
